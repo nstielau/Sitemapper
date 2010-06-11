@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   def request_seomoz_authorization
     params_to_sign = {:AccessID => SEOMOZ_ACCESS_ID, :Expires => Time.now.to_i + 60, :Redirect => CGI::escape("http://#{request.env["HTTP_HOST"]}/users/authorization/accept")}
     Rails.logger.info("Params to sign: #{params_to_sign.inspect}")
-    params_to_sign[:Signature] = Linkscape::Signer.signParams(params, [:AccessID, :Expires, :Redirect], SEOMOZ_SECRET_KEY)
+    params_to_sign[:Signature] = Linkscape::Signer.signParams(params_to_sign, [:AccessID, :Expires, :Redirect], SEOMOZ_SECRET_KEY)
     host = "ec2-184-73-17-79.compute-1.amazonaws.com"
     #host = "apidash.seomoz.org"
     redirect_to "http://#{host}/delegate?AccessID=#{params_to_sign[:AccessID]}&Expires=#{params_to_sign[:Expires]}&Signature=#{params_to_sign[:Signature]}&Redirect=#{params_to_sign[:Redirect]}"
