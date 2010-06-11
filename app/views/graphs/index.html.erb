@@ -1,0 +1,27 @@
+<h1>Listing graphs</h1>
+
+<% if @graphs.size > 0 %>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Url</th>
+    <th>Page count</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @graphs.each do |graph| %>
+  <tr>
+    <td><%=h graph.title %></td>
+    <td><%=h graph.url %></td>
+    <td><%=h graph.page_count %></td>
+    <td><%= link_to 'Show', graph %></td>
+    <td><%= link_to 'Edit', edit_graph_path(graph) %></td>
+    <td><%= link_to 'Destroy', graph, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+<% else %>
+  You haven't created any sitemap visualizations yet.  <%= link_to "Create one now", new_graph_url -%>
+<% end %>

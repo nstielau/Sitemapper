@@ -1,0 +1,18 @@
+<h1>Editing graph</h1>
+
+<% form_for(@graph) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :url %><br />
+    <%= h @graph.url %>
+    <%= f.hidden_field :url %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>

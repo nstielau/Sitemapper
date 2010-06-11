@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Site Map Explorer: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'scaffold', 'sitemap', 'black-tie/jquery-ui-1.8.1.custom.css' %>
+  <%= javascript_include_tag 'jquery-1.4.2.min.js', 'jquery-ui-1.8.1.custom.min.js' %>
+</head>
+<body>
+<div id="header" class="bar">
+  <ul>
+  <% if !current_user.nil? %>
+  <li>Welcome, <%= current_user.login -%>:</li>
+  <li><a href="/logout">Logout</a></li>
+  <% else %>
+  <li><a href="/signup">Signup</a></li>
+  <li><a href="/login">Login</a></li>
+  <% end %>
+  </ul>
+</div>
+<%= render :partial => "shared/delegate_auth_bar" -%>
+
+<div id="tabs" class='ui-tabs ui-widget ui-widget-content ui-corner-all'>
+  <%= render :partial => "shared/tabs" -%>
+	<div class="container">
+    <p style="color: green"><%= flash[:notice] %></p>
+    <%= yield %>
+	</div>
+</div>
+<div id="footer">
+  Powered by <a href="http://www.seomoz.org">SEOmoz</a> and the <a href="http://apiwiki.seomoz.org">Linkscape API</a>
+</div>
+</body>
+</html>

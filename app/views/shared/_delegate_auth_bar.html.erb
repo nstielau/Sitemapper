@@ -1,0 +1,26 @@
+<% if @needs_to_delegate_auth %>
+<div id="dialog-confirm" title="SEOmoz Authorization?">
+	<p>
+	  <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+	  This app is powered by the Linkscape API from SEOmoz.  To use it, you need to authorize this app to use your SEOmoz account.
+	</p>
+</div>
+<script type="text/javascript">
+  $(function() {
+		$("#dialog-confirm").dialog({
+			resizable: false,
+			height:200,
+			width:400,
+			modal: true,
+			buttons: {
+				'Authorize SEOmoz': function() {
+					window.location.href = "http://<%= request.env["HTTP_HOST"] -%>/users/authorization/request"
+				},
+				Cancel: function() {
+					$(this).dialog('close');
+				}
+			}
+		});
+	});
+</script>
+<% end %>

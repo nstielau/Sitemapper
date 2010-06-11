@@ -1,0 +1,17 @@
+= Site Link Graph
+
+== DESCRIPTION:
+
+This is a little app that demonstrates how to use SEOmoz's Application Authorization Delegation.
+
+For more information, see http://apiwiki.seomoz.org/Application-Authorization
+
+
+== THANKS:
+
+Thanks to the SEOmoz team for a great product and all their help.
+
+
+== Copyright
+
+See LICENSE for details.

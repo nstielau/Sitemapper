@@ -1,0 +1,71 @@
+--- 
+dependencies: 
+  bson_ext: 
+    group: 
+    - :default
+    version: = 1.0.1
+  mongo: 
+    group: 
+    - :default
+    version: = 1.0.0
+  mongo_mapper: 
+    group: 
+    - :default
+    version: = 0.7.6
+  rails: 
+    group: 
+    - :default
+    version: = 2.3.5
+  hashie: 
+    group: 
+    - :default
+    version: = 0.2.0
+  linkscape: 
+    group: 
+    - :default
+    version: = 0.2.6
+  json: 
+    group: 
+    - :default
+    version: = 1.4.3
+specs: 
+- activesupport: 
+    version: 2.3.5
+- json: 
+    version: 1.4.3
+- bson: 
+    version: "1.0"
+- rack: 
+    version: 1.0.1
+- actionpack: 
+    version: 2.3.5
+- actionmailer: 
+    version: 2.3.5
+- ruby-hmac: 
+    version: 0.4.0
+- linkscape: 
+    version: 0.2.6
+- jnunemaker-validatable: 
+    version: 1.8.4
+- hashie: 
+    version: 0.2.0
+- rake: 
+    version: 0.8.7
+- activerecord: 
+    version: 2.3.5
+- activeresource: 
+    version: 2.3.5
+- rails: 
+    version: 2.3.5
+- mongo: 
+    version: "1.0"
+- plucky: 
+    version: 0.1.1
+- mongo_mapper: 
+    version: 0.7.6
+- bson_ext: 
+    version: 1.0.1
+hash: 2cb6ed4d5eac1d7e4bbed0a8355402d6f3dfe9d3
+sources: 
+- Rubygems: 
+    uri: http://gems.rubyforge.org
