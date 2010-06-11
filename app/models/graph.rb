@@ -23,7 +23,7 @@ class Graph
                              :sort => :page_authority,
                              :filter => :internal,
                              :limit => 1000)
-    if result.reponse.class == Net::HTTPUnauthorized
+    if result.response.class == Net::HTTPUnauthorized
       errors.add_to_base "Not authorized to make API calls.  Make sure you successfully authorized this application via SEOmoz, and have waited for the permissions to update."
       return
     end

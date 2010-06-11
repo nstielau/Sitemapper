@@ -42,8 +42,14 @@ class GraphsController < ApplicationController
   def create
     @graph = Graph.new(params[:graph].merge(:user_id => current_user.id))
 
+    status = begin
+      @graph.save
+    rescue
+      false
+    end
+
     respond_to do |format|
-      if @graph.save
+      if status
         flash[:notice] = 'Graph was successfully created.'
         format.html { redirect_to(@graph) }
       else
