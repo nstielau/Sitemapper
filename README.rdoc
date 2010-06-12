@@ -1,10 +1,17 @@
-= Site Link Graph
+= Site Mapper
+
+Uses SEOmoz's Linkscape API to create a link-graph visualization of a website.
 
 == DESCRIPTION:
 
 This is a little app that demonstrates how to use SEOmoz's Application Authorization Delegation.
 
-For more information, see http://apiwiki.seomoz.org/Application-Authorization
+
+Hosted at: http://sitemapper.heroku.com
+Code at: http://github.com/nstielau/Sitemapper
+
+For more information on the SEOmoz Linkscape API, see http://apiwiki.seomoz.org/Application-Authorization
+For more information on the Application Authorization Delegation, see http://apiwiki.seomoz.org/Application-Authorization
 
 
 == THANKS:
