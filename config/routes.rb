@@ -1,4 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
+
+  map.connection "/graphs/example", :controller => 'welcome', :action => 'example'
+
   map.resources :graphs
 
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
