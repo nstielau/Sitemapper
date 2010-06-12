@@ -19,10 +19,13 @@ div#tabs div.container {
 	padding: 0 20px 20px 20px;
 }
 
-div#footer .right {
-	float: right;
-}
 
-div#footer .left {
-	float: left;
-}
+div#footer { padding-top: 15px; }
+div#footer .right {	float: right; }
+div#footer .right img { float: right; border: none;}
+div#footer .right a { border: none;}
+div#footer .left { float: left; }
+
+div.truths {float: left;}
+div.signup_now {float: right; font-size: 2em; padding-top: 15px;}
+div.marketing_container {width: 600px;}
