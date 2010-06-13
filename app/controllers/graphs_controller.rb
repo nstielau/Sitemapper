@@ -43,6 +43,8 @@ class GraphsController < ApplicationController
   def create
     @graph = Graph.new(params[:graph].merge(:user_id => current_user.id))
 
+    # Catch any errors coming from saving the graph, and show error case.
+    # This is specifically to catch unauthorized errors from the SEOmoz API.
     status = begin
       @graph.save
     rescue
