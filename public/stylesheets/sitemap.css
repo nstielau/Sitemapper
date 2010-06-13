@@ -30,4 +30,22 @@ div#footer .right img { float: right; border: none;}
 div#footer .right a { border: none;}
 div#footer .left { float: left; }
 
-a.signup_now {font-size: 2em; padding-top: 15px;display:block;}
+a.signup_now {
+	font-size: 2em;
+	padding-top: 15px;
+	display:block;
+	width: 170px;
+	margin-left: 117px;
+	height: 34px;
+}
+
+div.legend-color {
+	width: 15px;
+	height: 15px;
+	background-color: #cccccc;
+	float: left;
+}
+div.legend-color.inbound { background-color:#00FFFF; }
+div.legend-color.outbound { background-color:#cccc00; }
+div.legend-color.tier2-2 { background-color:#777777; }
+div.legend-color.tier1-3 { background-color:#cccccc; }

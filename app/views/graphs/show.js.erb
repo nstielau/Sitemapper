@@ -1,0 +1,18 @@
+var json = [
+<% @graph.pages.each do |page| -%>
+<% if page.outbound_links.size > 0 && (page.outbound_links.reject{|l| !@graph.has_page(l.url)}.size > 0)-%>
+  {
+    "id": "<%= page.url_id -%>",
+    "name": "<%= page.path -%>",
+    "data": { "$dim": <%= ((page.mozrank)).to_i-%> },
+    "adjacencies": [
+<% page.outbound_links.each do |link| -%>
+<% if @graph.has_page(link.url) -%>
+      { "nodeTo": "<%= link.url_id -%>", "data": { "weight": 1, "path": "<%= link.url -%>" }},
+<% end -%>
+<% end -%>
+    ]
+  },
+<% end -%>
+<% end -%>
+];
