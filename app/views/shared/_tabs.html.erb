@@ -1,14 +1,21 @@
 <%
-admin_links = [
-  ["/", "Home"],
-  ["/graphs", "Graphs"],
-  [new_graph_url(:only_path => true), "Create graph"]
-]
+links = []
+if logged_in?
+  links = [
+    ["/graphs", "Graphs"],
+    [new_graph_url(:only_path => true), "Create graph"]
+  ]
+else
+  links = [
+    ["/", "Home"],
+    ["/graphs/example", "Demo"]
+  ]
+end
 
 current_path = request.env["PATH_INFO"].to_s
 %>
 <ul class='ui-tabs ui-widget ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all'>
-  <% admin_links.each do |url, text| %>
+  <% links.each do |url, text| %>
       <li title="<%= "#{current_path}::#{url.to_s}"-%>" class="ui-state-default ui-corner-top <%= url.to_s == current_path ? "ui-tabs-selected ui-state-active" : ""%>"><a href="<%= url -%>"><span><%= text -%></span></a></li>
   <% end %>
 </ul>
