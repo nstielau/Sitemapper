@@ -9,15 +9,12 @@
   $(function() {
 		$("#dialog-confirm").dialog({
 			resizable: false,
-			height:200,
+			height:225,
 			width:400,
 			modal: true,
 			buttons: {
 				'Authorize SEOmoz': function() {
 					window.location.href = "http://<%= request.env["HTTP_HOST"] -%>/users/authorization/request"
-				},
-				Cancel: function() {
-					$(this).dialog('close');
 				}
 			}
 		});
