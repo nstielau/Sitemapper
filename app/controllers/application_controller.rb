@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   include AuthenticatedSystem
-  # Scrub sensitive parameters from your log
-  # filter_parameter_logging :password
+
+  filter_parameter_logging :password
 
   def check_auth_delegated
     @needs_to_delegate_auth = current_user && !current_user.has_delegated_seomoz_auth
