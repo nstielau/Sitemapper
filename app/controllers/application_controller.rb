@@ -12,7 +12,6 @@ class ApplicationController < ActionController::Base
   def check_auth_delegated
     @needs_to_delegate_auth = current_user && !current_user.has_delegated_seomoz_auth
     if @needs_to_delegate_auth
-      flash[:notice] = "You need to authorize SEOmoz"
       redirect_to "/" unless params[:action] == "index"
     end
   end
