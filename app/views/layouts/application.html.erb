@@ -26,7 +26,17 @@
 <div id="tabs" class='ui-tabs ui-widget ui-widget-content ui-corner-all'>
   <%= render :partial => "shared/tabs" -%>
 	<div class="container">
-    <p style="color: green"><%= flash[:notice] %></p>
+	  <% if flash[:notice] %>
+      <div class="ui-state-highlight ui-corner-all">
+				<p><span style="float: left; margin-right: 0.3em;" class="ui-icon ui-icon-info"></span>
+				<strong>Note:</strong> <%= flash[:notice] %></p>
+			</div>
+    <% elsif flash[:error] %>
+      <div class="ui-state-error ui-corner-all">
+				<p><span style="float: left; margin-right: 0.3em;" class="ui-icon ui-icon-alert"></span>
+				<strong>Alert:</strong> <%= flash[:error] -%></p>
+			</div>
+    <% end %>
     <%= yield %>
 	</div>
 </div>

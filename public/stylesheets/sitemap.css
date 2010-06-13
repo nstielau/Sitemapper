@@ -49,3 +49,5 @@ div.legend-color.inbound { background-color:#00FFFF; }
 div.legend-color.outbound { background-color:#cccc00; }
 div.legend-color.tier2-2 { background-color:#777777; }
 div.legend-color.tier1-3 { background-color:#cccccc; }
+
+.ui-state-error,.ui-state-highlight {margin-top: 20px; padding: 0pt 0.7em;}
