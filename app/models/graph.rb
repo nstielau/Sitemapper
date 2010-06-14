@@ -12,13 +12,14 @@ class Graph
     pages.size > 0
   end
 
+  # Hits the SEOmoz Linkscape API, parses the result and instanciates Pages and Links for this URL
   def generate(regenerate=false)
     return if generated? && !regenerate
     client = Linkscape::Client.new(:accessID => user.seomoz_access_id, :secret => user.seomoz_secret_key)
     #client = Linkscape::Client.new(:accessID => SEOMOZ_ACCESS_ID, :secret => SEOMOZ_SECRET_KEY)
     result = client.allLinks(url,
                              :page_to_subdomain,
-                             :urlcols => [:url, :mozrank],
+                             :urlcols => [:url, :mozrank, :page_authority],
                              :linkcols => :all,
                              :sort => :page_authority,
                              :filter => :internal,
@@ -35,6 +36,7 @@ class Graph
       if source_url != target_url # ignore self-links
         added_pages[source_url] ||= Page.new(:url => source_url)
         added_pages[source_url].mozrank = link['umrp']
+        added_pages[source_url].page_authority = link['upa']
         added_pages[source_url].outbound_links ||= []
         added_pages[source_url].outbound_links << Link.new(:url => target_url)
         added_pages[target_url] ||= Page.new(:url => target_url)
@@ -54,5 +56,9 @@ class Graph
   def has_page(url)
     @page_index ||= pages.inject({}){|x,y| x[y.url] = true; x}
     @page_index[url] || false
+  end
+
+  def get_page(url)
+    pages.select{|p| p.url == url}.first
   end
 end
