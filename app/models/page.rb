@@ -5,6 +5,7 @@ class Page
 
   key :url, String
   key :mozrank, Float
+  key :page_authority, Integer
 
   has_many :outbound_links, :class => Link
   has_many :inbound_links, :class => Link
