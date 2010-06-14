@@ -4,7 +4,7 @@ var json = [
   {
     "id": "<%= page.url_id -%>",
     "name": "<%= page.path -%>",
-    "data": { "$dim": <%= ((page.mozrank)).to_i-%> },
+    "data": { "$dim": <%= (page.mozrank).to_i-%>, "mozrank": "<%= sprintf("%.2f", page.mozrank) -%>" },
     "adjacencies": [
 <% page.outbound_links.each do |link| -%>
 <% if @graph.has_page(link.url) -%>

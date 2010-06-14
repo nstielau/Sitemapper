@@ -127,7 +127,9 @@ function init(){
             Log.write("Centering " + node.name + "...");
 
             //Make right column relations list.
-            var html = "<h4>" + node.name + "</h4><b>Links:</b>";
+            var html = "<strong>Path:</strong> " + node.name + "<br/>";
+            html += "<strong>Mozrank:</strong> " + node.data.mozrank + "<br/>";
+            html += "<b>Links:</b>";
             html += "<ul>";
             Graph.Util.eachAdjacency(node, function(adj){
                 var child = adj.nodeTo;

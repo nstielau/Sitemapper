@@ -2,7 +2,7 @@ var json = [
   {
     "id": "9c72baf03ec91af69610ffeb7279f447",
     "name": "/tools/page-strength.php",
-    "data": { "$dim": 5 },
+    "data": { "$dim": 5, "mozrank": "5.20" },
     "adjacencies": [
       { "nodeTo": "2fc58072bc1e3ec113ba976015c44e8a", "data": { "weight": 1, "path": "www.seomoz.org/page-strength" }},
       { "nodeTo": "1bad2412cfc17eaf3c9ba40c828107f4", "data": { "weight": 1, "path": "www.seomoz.org/rewritten/page-strength.php" }},
@@ -11,7 +11,7 @@ var json = [
   {
     "id": "b61758c4797f9c3058c485f07a3928d3",
     "name": "/article/beginners-guide-to-search-engine-optimization",
-    "data": { "$dim": 5 },
+    "data": { "$dim": 5, "mozrank": "5.47" },
     "adjacencies": [
       { "nodeTo": "b2435d9341f5a82b52c14e5328e26184", "data": { "weight": 1, "path": "www.seomoz.org/" }},
       { "nodeTo": "64f2a3c93d4a8e9e928c180c65f9f893", "data": { "weight": 1, "path": "www.seomoz.org/about" }},
@@ -56,7 +56,7 @@ var json = [
   {
     "id": "c031d0cbbd86bea13709f4046b1c47e8",
     "name": "/pro_landing.php",
-    "data": { "$dim": 6 },
+    "data": { "$dim": 6, "mozrank": "6.93" },
     "adjacencies": [
       { "nodeTo": "b2435d9341f5a82b52c14e5328e26184", "data": { "weight": 1, "path": "www.seomoz.org/" }},
       { "nodeTo": "64f2a3c93d4a8e9e928c180c65f9f893", "data": { "weight": 1, "path": "www.seomoz.org/about" }},
@@ -100,7 +100,7 @@ var json = [
   {
     "id": "43ff8ec62a39be56040572ff5f83d187",
     "name": "/article/search-ranking-factors",
-    "data": { "$dim": 6 },
+    "data": { "$dim": 6, "mozrank": "6.09" },
     "adjacencies": [
       { "nodeTo": "b2435d9341f5a82b52c14e5328e26184", "data": { "weight": 1, "path": "www.seomoz.org/" }},
       { "nodeTo": "64f2a3c93d4a8e9e928c180c65f9f893", "data": { "weight": 1, "path": "www.seomoz.org/about" }},
@@ -156,7 +156,7 @@ var json = [
   {
     "id": "b286885a8c0c999ae0baed412a2259bf",
     "name": "/users/pro/dashboard/",
-    "data": { "$dim": 5 },
+    "data": { "$dim": 5, "mozrank": "5.74" },
     "adjacencies": [
       { "nodeTo": "6598c31056f0dd9203a7f02d0f27d8ac", "data": { "weight": 1, "path": "www.seomoz.org/gopro" }},
       { "nodeTo": "c031d0cbbd86bea13709f4046b1c47e8", "data": { "weight": 1, "path": "www.seomoz.org/pro_landing.php" }},
@@ -165,7 +165,7 @@ var json = [
   {
     "id": "b9dd7f1650be5513ff0fa29aab7e8d0d",
     "name": "/web2.0",
-    "data": { "$dim": 6 },
+    "data": { "$dim": 6, "mozrank": "6.03" },
     "adjacencies": [
       { "nodeTo": "b2435d9341f5a82b52c14e5328e26184", "data": { "weight": 1, "path": "www.seomoz.org/" }},
       { "nodeTo": "64f2a3c93d4a8e9e928c180c65f9f893", "data": { "weight": 1, "path": "www.seomoz.org/about" }},
@@ -230,7 +230,7 @@ var json = [
   {
     "id": "f4700947005c7534a9a46d481197db4f",
     "name": "/articles",
-    "data": { "$dim": 6 },
+    "data": { "$dim": 6, "mozrank": "6.58" },
     "adjacencies": [
       { "nodeTo": "b2435d9341f5a82b52c14e5328e26184", "data": { "weight": 1, "path": "www.seomoz.org/" }},
       { "nodeTo": "64f2a3c93d4a8e9e928c180c65f9f893", "data": { "weight": 1, "path": "www.seomoz.org/about" }},
@@ -320,7 +320,7 @@ var json = [
   {
     "id": "64e465aedad0be8b64972bd6b1be3885",
     "name": "/blog",
-    "data": { "$dim": 6 },
+    "data": { "$dim": 6, "mozrank": "6.73" },
     "adjacencies": [
       { "nodeTo": "b2435d9341f5a82b52c14e5328e26184", "data": { "weight": 1, "path": "www.seomoz.org/" }},
       { "nodeTo": "64f2a3c93d4a8e9e928c180c65f9f893", "data": { "weight": 1, "path": "www.seomoz.org/about" }},
@@ -454,7 +454,7 @@ var json = [
   {
     "id": "b0bbf1e2f73d2be7f6e2f35338456d92",
     "name": "/team/randfish",
-    "data": { "$dim": 5 },
+    "data": { "$dim": 5, "mozrank": "5.29" },
     "adjacencies": [
       { "nodeTo": "b2435d9341f5a82b52c14e5328e26184", "data": { "weight": 1, "path": "www.seomoz.org/" }},
       { "nodeTo": "64f2a3c93d4a8e9e928c180c65f9f893", "data": { "weight": 1, "path": "www.seomoz.org/about" }},
@@ -511,7 +511,7 @@ var json = [
   {
     "id": "76d5e65050830569d12c1c5d3e4865ac",
     "name": "/linkscape",
-    "data": { "$dim": 5 },
+    "data": { "$dim": 5, "mozrank": "5.70" },
     "adjacencies": [
       { "nodeTo": "b2435d9341f5a82b52c14e5328e26184", "data": { "weight": 1, "path": "www.seomoz.org/" }},
       { "nodeTo": "64f2a3c93d4a8e9e928c180c65f9f893", "data": { "weight": 1, "path": "www.seomoz.org/about" }},
@@ -558,7 +558,7 @@ var json = [
   {
     "id": "e8464813219fbf25ebb319ad3ba996f3",
     "name": "/blog/the-web-developers-seo-cheat-sheet",
-    "data": { "$dim": 5 },
+    "data": { "$dim": 5, "mozrank": "5.69" },
     "adjacencies": [
       { "nodeTo": "b2435d9341f5a82b52c14e5328e26184", "data": { "weight": 1, "path": "www.seomoz.org/" }},
       { "nodeTo": "64f2a3c93d4a8e9e928c180c65f9f893", "data": { "weight": 1, "path": "www.seomoz.org/about" }},
@@ -667,7 +667,7 @@ var json = [
   {
     "id": "6598c31056f0dd9203a7f02d0f27d8ac",
     "name": "/gopro",
-    "data": { "$dim": 6 },
+    "data": { "$dim": 6, "mozrank": "6.90" },
     "adjacencies": [
       { "nodeTo": "c031d0cbbd86bea13709f4046b1c47e8", "data": { "weight": 1, "path": "www.seomoz.org/pro_landing.php" }},
     ]
@@ -675,7 +675,7 @@ var json = [
   {
     "id": "da0a3e7001f1fc2ffd9305583d006467",
     "name": "/article/social-media-marketing-tactics",
-    "data": { "$dim": 5 },
+    "data": { "$dim": 5, "mozrank": "5.17" },
     "adjacencies": [
       { "nodeTo": "b2435d9341f5a82b52c14e5328e26184", "data": { "weight": 1, "path": "www.seomoz.org/" }},
       { "nodeTo": "64f2a3c93d4a8e9e928c180c65f9f893", "data": { "weight": 1, "path": "www.seomoz.org/about" }},
@@ -719,7 +719,7 @@ var json = [
   {
     "id": "833f5af5453ea4b8324aa0b83fc6d39d",
     "name": "/users/premium",
-    "data": { "$dim": 5 },
+    "data": { "$dim": 5, "mozrank": "5.31" },
     "adjacencies": [
       { "nodeTo": "6598c31056f0dd9203a7f02d0f27d8ac", "data": { "weight": 1, "path": "www.seomoz.org/gopro" }},
       { "nodeTo": "b286885a8c0c999ae0baed412a2259bf", "data": { "weight": 1, "path": "www.seomoz.org/users/pro/dashboard/" }},
@@ -728,7 +728,7 @@ var json = [
   {
     "id": "a0c8007c69683edb5957528a51825fe1",
     "name": "/trifecta",
-    "data": { "$dim": 5 },
+    "data": { "$dim": 5, "mozrank": "5.90" },
     "adjacencies": [
       { "nodeTo": "b2435d9341f5a82b52c14e5328e26184", "data": { "weight": 1, "path": "www.seomoz.org/" }},
       { "nodeTo": "64f2a3c93d4a8e9e928c180c65f9f893", "data": { "weight": 1, "path": "www.seomoz.org/about" }},
@@ -774,7 +774,7 @@ var json = [
   {
     "id": "db8e8f89fc0ff671fb5e4375b518641a",
     "name": "/users/view/63",
-    "data": { "$dim": 5 },
+    "data": { "$dim": 5, "mozrank": "5.22" },
     "adjacencies": [
       { "nodeTo": "b2435d9341f5a82b52c14e5328e26184", "data": { "weight": 1, "path": "www.seomoz.org/" }},
       { "nodeTo": "64f2a3c93d4a8e9e928c180c65f9f893", "data": { "weight": 1, "path": "www.seomoz.org/about" }},
@@ -832,7 +832,7 @@ var json = [
   {
     "id": "b2435d9341f5a82b52c14e5328e26184",
     "name": "/",
-    "data": { "$dim": 7 },
+    "data": { "$dim": 7, "mozrank": "7.12" },
     "adjacencies": [
       { "nodeTo": "64f2a3c93d4a8e9e928c180c65f9f893", "data": { "weight": 1, "path": "www.seomoz.org/about" }},
       { "nodeTo": "b40d606530d5378683bb611d2dbc80e8", "data": { "weight": 1, "path": "www.seomoz.org/article/the-beginners-checklist-for-learning-seo" }},
@@ -915,7 +915,7 @@ var json = [
   {
     "id": "1bad2412cfc17eaf3c9ba40c828107f4",
     "name": "/rewritten/page-strength.php",
-    "data": { "$dim": 5 },
+    "data": { "$dim": 5, "mozrank": "5.22" },
     "adjacencies": [
       { "nodeTo": "2fc58072bc1e3ec113ba976015c44e8a", "data": { "weight": 1, "path": "www.seomoz.org/page-strength" }},
       { "nodeTo": "a0c8007c69683edb5957528a51825fe1", "data": { "weight": 1, "path": "www.seomoz.org/trifecta" }},
@@ -924,7 +924,7 @@ var json = [
   {
     "id": "2bf1153d2699639dd8199448d9b2d72e",
     "name": "/tools",
-    "data": { "$dim": 6 },
+    "data": { "$dim": 6, "mozrank": "6.60" },
     "adjacencies": [
       { "nodeTo": "b2435d9341f5a82b52c14e5328e26184", "data": { "weight": 1, "path": "www.seomoz.org/" }},
       { "nodeTo": "64f2a3c93d4a8e9e928c180c65f9f893", "data": { "weight": 1, "path": "www.seomoz.org/about" }},
@@ -986,7 +986,7 @@ var json = [
   {
     "id": "2aadbd81a6a1e468458313df94bdf062",
     "name": "/ugc",
-    "data": { "$dim": 6 },
+    "data": { "$dim": 6, "mozrank": "6.58" },
     "adjacencies": [
       { "nodeTo": "b2435d9341f5a82b52c14e5328e26184", "data": { "weight": 1, "path": "www.seomoz.org/" }},
       { "nodeTo": "64f2a3c93d4a8e9e928c180c65f9f893", "data": { "weight": 1, "path": "www.seomoz.org/about" }},
@@ -1127,4 +1127,4 @@ var json = [
       { "nodeTo": "e65d6014c5edb971156a13e50ec5182a", "data": { "weight": 1, "path": "www.seomoz.org/users/view/66460" }},
     ]
   },
-]
+];
