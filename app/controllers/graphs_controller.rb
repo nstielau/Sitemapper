@@ -24,7 +24,7 @@ class GraphsController < ApplicationController
   # GET /graphs/1.xml
   def show
     @graph = Graph.find(params[:id], :user_id => current_user.id)
-
+    @detailed_report = (params[:detailed] == "true")
     respond_to do |format|
       format.html # show.html.erb
       format.js

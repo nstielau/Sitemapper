@@ -30,5 +30,5 @@ $(function() {
 });
 </script>
 <%= javascript_include_tag 'jit-yc' %>
-<%= javascript_include_tag "graphs/#{@graph_id || @graph.id}.js" %>
+<script src="<%= "/graphs/#{@detailed_report ? 'detailed/' : ''}#{@graph_id || @graph.id}.js" -%>" type="text/javascript"></script>
 <%= javascript_include_tag 'jit-sitemap' %>
