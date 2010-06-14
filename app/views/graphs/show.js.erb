@@ -1,15 +1,22 @@
 <% @detailed_report ||= false %>
 var json = [
+<%
+  valid_page_urls = []
+  @graph.pages.each do |page|
+	if @detailed_report || (page.outbound_links.size > 0 && (page.outbound_links.reject{|l| !@graph.has_page(l.url)}.size > 0))
+      valid_page_urls << page.url
+	end
+  end
+%>
 <% @graph.pages.each do |page| -%>
-<% #TODO: loop through pages first, and get valid pages, then continue.  This will remove bogus edges %>
-<% if @detailed_report || (page.outbound_links.size > 0 && (page.outbound_links.reject{|l| !@graph.has_page(l.url)}.size > 0)) -%>
+<% if valid_page_urls.include?(page.url) -%>
   {
     "id": "<%= page.url_id -%>",
     "name": "<%= page.path -%>",
     "data": { "$dim": <%= (page.mozrank).to_i-%>, "mozrank": "<%= sprintf("%.2f", page.mozrank.to_f) -%>", "page_authority":  "<%= page.page_authority -%>"},
     "adjacencies": [
 <% page.outbound_links.each do |link| -%>
-<% if @graph.has_page(link.url) -%>
+<% if valid_page_urls.include?(link.url) -%>
       { "nodeTo": "<%= link.url_id -%>", "data": { "weight": 1, "path": "<%= link.url -%>" }},
 <% end -%>
 <% end -%>
