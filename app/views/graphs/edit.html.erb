@@ -8,6 +8,10 @@
     <%= f.text_field :title %>
   </p>
   <p>
+    <%= f.label :is_public, "Publicly viewable?" %><br />
+    <%= f.check_box :is_public %>
+  </p>
+  <p>
     <%= f.label :url %><br />
     <%= h @graph.url %>
     <%= f.hidden_field :url %>

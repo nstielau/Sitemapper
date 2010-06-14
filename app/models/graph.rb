@@ -2,6 +2,7 @@ class Graph
   include MongoMapper::Document
   key :title,        String
   key :url,          String
+  key :is_public,    Boolean, :default => false
 
   belongs_to :user
   has_many :pages
