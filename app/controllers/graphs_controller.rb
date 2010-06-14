@@ -20,6 +20,13 @@ class GraphsController < ApplicationController
     end
   end
 
+  def matrix
+      @graph = Graph.find(params[:id], :user_id => current_user.id)
+      respond_to do |format|
+        format.html # show.html.erb
+      end
+  end
+
   # GET /graphs/1
   # GET /graphs/1.xml
   def show

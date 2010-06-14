@@ -1,0 +1,84 @@
+<%
+# Get the top 100 pages ordered by # of outbound links
+pages = @graph.pages.sort{|a,b| b.outbound_links.size <=> a.outbound_links.size}[0..100]
+
+# Create a lookup url => page index
+i=0
+url_to_index ||= pages.inject({}){|x,y| x[y.url] = i; i=i+1;x}
+%>
+
+<%= javascript_include_tag 'protovis' %>
+<div id="vis" style="width:800px;height:1600px;" align="center">
+      <script type="text/javascript+protovis">
+      var miserables = {
+        nodes:[
+<% pages.each do |page| %>
+          {nodeName:"<%= page.path -%>", group:1},
+<% end %>
+        ],
+        links:[
+<% pages.each do |page| %>
+<% page.outbound_links.each do |link| %>
+<% if !url_to_index[page.url].nil? && !url_to_index[link.url].nil? %>
+{source: <%= url_to_index[page.url].to_i -%>, target: <%= url_to_index[link.url].to_i -%>, value:1, name: "<%= link.url -%>"},
+<% end %>
+<% end %>
+<% end %>
+        ]
+      };
+
+  var color = pv.Colors.category19().by(function(d) d.group);
+
+  var vis = new pv.Panel()
+      .width(800)
+      .height(800)
+      .top(90)
+      .left(90);
+
+  var layout = vis.add(pv.Layout.Matrix)
+      .nodes(miserables.nodes)
+      .links(miserables.links)
+      .sort(function(a, b) b.group - a.group);
+
+  layout.link.add(pv.Bar)
+      .fillStyle(function(l) l.linkValue
+          ? ((l.targetNode.group == l.sourceNode.group)
+          ? color(l.sourceNode) : "#555") : "#eee")
+      .antialias(false)
+      .lineWidth(1);
+
+  layout.label.add(pv.Label)
+      .textStyle(color);
+
+  vis.render();
+
+  // var w = 800,
+  //     h = 800,
+  //     colors = pv.Colors.category19();
+  //
+  // var vis2 = new pv.Panel()
+  //     .width(w)
+  //     .height(h)
+  //     .fillStyle("white")
+  //     .event("mousedown", pv.Behavior.pan())
+  //     .event("mousewheel", pv.Behavior.zoom());
+  //
+  // var force = vis2.add(pv.Layout.Force)
+  //     .nodes(miserables.nodes)
+  //     .links(miserables.links);
+  //
+  // force.link.add(pv.Line);
+  //
+  // force.node.add(pv.Dot)
+  //     .size(function(d) (d.linkDegree + 4) * Math.pow(this.scale, -1.5))
+  //     .fillStyle(function(d) d.fix ? "brown" : colors(d.group))
+  //     .strokeStyle(function() this.fillStyle().darker())
+  //     .lineWidth(1)
+  //     .title(function(d) d.nodeName)
+  //     .event("mousedown", pv.Behavior.drag())
+  //     .event("drag", force);
+  //
+  // vis2.render();
+      </script>
+
+</div>
