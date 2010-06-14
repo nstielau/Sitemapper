@@ -3,7 +3,7 @@ var json = [
 <%
   valid_page_urls = []
   @graph.pages.each do |page|
-	if @detailed_report || (page.outbound_links.size > 0 && (page.outbound_links.reject{|l| !@graph.has_page(l.url)}.size > 0))
+	if @detailed_report || page.outbound_links.reject{|l| !@graph.has_page(l.url)}.size > 0
       valid_page_urls << page.url
 	end
   end
