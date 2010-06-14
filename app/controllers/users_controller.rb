@@ -25,7 +25,7 @@ class UsersController < ApplicationController
   end
 
   def request_seomoz_authorization
-    params_to_sign = {:AccessID => SEOMOZ_ACCESS_ID, :Expires => Time.now.to_i + 60, :Redirect => CGI::escape("http://#{request.env["HTTP_HOST"]}/users/authorization/accept")}
+    params_to_sign = {:AccessID => SEOMOZ_ACCESS_ID, :Expires => Time.now.to_i + 180, :Redirect => CGI::escape("http://#{request.env["HTTP_HOST"]}/users/authorization/accept")}
     Rails.logger.info("Params to sign: #{params_to_sign.inspect}")
     params_to_sign[:Signature] = Linkscape::Signer.signParams(params_to_sign, [:AccessID, :Expires, :Redirect], SEOMOZ_SECRET_KEY)
     #host = "ec2-184-73-17-79.compute-1.amazonaws.com"
