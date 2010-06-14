@@ -15,4 +15,8 @@ class ApplicationController < ActionController::Base
       redirect_to "/" unless params[:action] == "index"
     end
   end
+
+  def render_404
+    render :template => "errors/404"
+  end
 end
