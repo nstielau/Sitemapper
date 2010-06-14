@@ -26,7 +26,7 @@ class Graph
                              :limit => 1000)
     if result.response.class == Net::HTTPUnauthorized
       errors.add_to_base "Not authorized to make API calls.  Make sure you successfully authorized this application via SEOmoz, and have waited for the permissions to update."
-      return
+      raise "Graph could not be generated.  Not authorized to make API calls."
     end
 
     added_pages = {}
