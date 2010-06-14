@@ -1,6 +1,7 @@
 <% @detailed_report ||= false %>
 var json = [
 <% @graph.pages.each do |page| -%>
+<% #TODO: loop through pages first, and get valid pages, then continue.  This will remove bogus edges %>
 <% if @detailed_report || (page.outbound_links.size > 0 && (page.outbound_links.reject{|l| !@graph.has_page(l.url)}.size > 0)) -%>
   {
     "id": "<%= page.url_id -%>",
