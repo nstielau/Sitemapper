@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.connection "/graphs/example", :controller => 'welcome', :action => 'example'
+  map.connection "/graphs/example", :controller => 'graphs', :action => 'example'
   map.connection "/javascripts/graphs/:id.js", :controller => 'graphs', :action => 'show', :format => "js"
 
   map.resources :graphs

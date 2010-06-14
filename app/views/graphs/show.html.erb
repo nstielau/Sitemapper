@@ -3,25 +3,21 @@
 </div>
 
 <div id="center-container" style="width: 100%;height:800px">
-    <div id="infovis" style="width: 100%;height:800px"></div>
+  <%= render :partial => "shared/legend" -%>
+  <div id="infovis" style="width: 100%;height:800px"></div>
 </div>
 
 <div id="right-container">
+  <h3>Graph Info</h3>
   <div>
-    <h4>Title: <%= @graph.title %></h4>
-    <p>
-      <strong>URL:</strong> <%= @graph.url %><br/>
-      <strong>Page Count:</strong> <%= @graph.page_count %>
-    </p>
+    <strong>Title:</strong> <%= @graph.title %><br/>
+    <strong>URL:</strong> <%= @graph.url %><br/>
+    <strong>Page Count:</strong> <%= @graph.page_count %>
   </div>
-  <div>
-    <h4>Legend</h4>
-    <div class="legend-color outbound"></div> Outbound links from selected page<br/>
-    <div class="legend-color inbound"></div> Inbound links to selected page<br/>
-    <div class="legend-color tier2"></div> Link between tier two pages<br/>
-    <div class="legend-color tier1_3"></div> Link between tier two and tier three page<br/>
+
+  <h3>Page Details</h3>
+  <div id="inner-details" style="width: 300px;">
   </div>
-  <div id="inner-details" style="width: 300px;"></div>
 </div>
 
 <br style="clear:both"/>
@@ -37,5 +33,5 @@ $(function() {
 });
 </script>
 <%= javascript_include_tag 'jit-yc' %>
-<%= javascript_include_tag "graphs/#{@graph.id}.js" %>
+<%= javascript_include_tag "graphs/#{@graph_id || @graph.id}.js" %>
 <%= javascript_include_tag 'jit-sitemap' %>

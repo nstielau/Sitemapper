@@ -1,6 +1,14 @@
+require 'ostruct'
+
 class GraphsController < ApplicationController
-  before_filter :login_required
-  before_filter :check_auth_delegated
+  before_filter :login_required, :except => [:example]
+  before_filter :check_auth_delegated, :except => [:example]
+
+  def example
+    @graph = OpenStruct.new(:title => "Example Graph of SEOmoz.org", :url => "http://www.seomoz.org", :page_count => 428)
+    @graph_id = "example"
+    render :action => :show
+  end
 
   # GET /graphs
   # GET /graphs.xml

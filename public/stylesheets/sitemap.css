@@ -44,10 +44,19 @@ div.legend-color {
 	height: 15px;
 	background-color: #cccccc;
 	float: left;
+	margin-top: 2px;
+	margin-right: 10px;
 }
 div.legend-color.inbound { background-color:#00FFFF; }
 div.legend-color.outbound { background-color:#cccc00; }
 div.legend-color.tier2-2 { background-color:#777777; }
-div.legend-color.tier1-3 { background-color:#cccccc; }
+div.legend-color.tier1-3 { background-color:#dddddd; }
 
 .ui-state-error,.ui-state-highlight {margin-top: 20px; padding: 0pt 0.7em;}
+
+div#legend {
+	width: 325px;
+	float: right;
+	padding: 10px;
+}
+div#legend h3 {padding: 0; margin: 0; padding-bottom: 5px;}
