@@ -1,8 +1,8 @@
 require 'ostruct'
 
 class GraphsController < ApplicationController
-  before_filter :login_required, :except => [:example]
-  before_filter :check_auth_delegated, :except => [:example]
+  before_filter :login_required, :except => [:example, :show]
+  before_filter :check_auth_delegated, :except => [:example, :show]
 
   def example
     @graph = OpenStruct.new(:title => "Example Graph of SEOmoz.org", :url => "http://www.seomoz.org", :page_count => 428)
@@ -23,7 +23,13 @@ class GraphsController < ApplicationController
   # GET /graphs/1
   # GET /graphs/1.xml
   def show
-    @graph = Graph.find(params[:id], :user_id => current_user.id)
+    @graph = Graph.find(params[:id])
+
+    if @graph.nil? || !@graph.is_public && (!logged_in? || current_user.id != @graph.user_id)
+      render_404
+      return
+    end
+
     @detailed_report = (params[:detailed] == "true")
     respond_to do |format|
       format.html # show.html.erb
@@ -44,6 +50,11 @@ class GraphsController < ApplicationController
   # GET /graphs/1/edit
   def edit
     @graph = Graph.find(params[:id], :user_id => current_user.id)
+
+    if @graph.nil?
+      render_404
+      return
+    end
   end
 
   # POST /graphs
@@ -74,6 +85,11 @@ class GraphsController < ApplicationController
   def update
     @graph = Graph.find(params[:id], :user_id => current_user.id)
 
+    if @graph.nil?
+      render_404
+      return
+    end
+
     respond_to do |format|
       if @graph.update_attributes(params[:graph])
         flash[:notice] = 'Graph was successfully updated.'
@@ -88,6 +104,12 @@ class GraphsController < ApplicationController
   # DELETE /graphs/1.xml
   def destroy
     @graph = Graph.find(params[:id], :user_id => current_user.id)
+
+    if @graph.nil?
+      render_404
+      return
+    end
+
     @graph.destroy
 
     respond_to do |format|
