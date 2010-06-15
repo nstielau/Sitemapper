@@ -12,10 +12,12 @@
     <strong>Title:</strong> <%= @graph.title %><br/>
     <strong>URL:</strong> <%= @graph.url %><br/>
     <strong>Pages:</strong> <%= @graph.page_count %><br/>
+<% if @graph.class == Graph%>
 <% if @detailed_report %>
     <strong>Detail:</strong> <%= link_to "View Simpilfied", graph_url(:id => @graph.id) %>
 <% else %>
     <strong>Detail:</strong> <%= link_to "View Detailed", detailed_graph_url(:id => @graph.id) %>
+<% end %>
 <% end %>
   </div>
   <div id="inner-details" style="width: 300px;">
