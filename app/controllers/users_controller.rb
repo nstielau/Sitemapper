@@ -37,7 +37,6 @@ class UsersController < ApplicationController
     current_user.seomoz_secret_key = Digest::MD5.hexdigest("#{SEOMOZ_SECRET_KEY}#{params[:Token]}")
     current_user.seomoz_access_id = params[:AccessID]
     current_user.has_delegated_seomoz_auth = true
-    current_user.delegated_seomoz_auth_at = Time.now
     current_user.save
     redirect_to "/"
   end
