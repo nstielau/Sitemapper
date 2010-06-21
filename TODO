@@ -1,26 +1,11 @@
 Help Section
-Use User creds
-Some sort of verification for SEOmoz creds
-Load JSON file
-What SEOMOZ Creds? access_id, secret_key
 
-Better to use Protovis JS?
+Better to use Protovis JS trio?
 http://vis.stanford.edu/protovis/ex/force.html
 http://vis.stanford.edu/protovis/ex/matrix.html
+http://vis.stanford.edu/protovis/ex/arc.html
 
-Put in Github
 Make Readme pretty
 
-Add link to github/source in apiwiki
+Show 'recent, public graphs' on homepage.  Maybe make a new field that is 'is_listed' and only show public, listed graphs.
 
-send email with
-  app
-  code
-  docs
-  todos - delayed auth
-
-Make pretty
-
-Favicon
-
-Add a demo page if you aren't logged in
