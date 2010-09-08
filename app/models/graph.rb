@@ -37,6 +37,7 @@ class Graph
       if source_url != target_url # ignore self-links
         added_pages[source_url] ||= Page.new(:url => source_url)
         added_pages[source_url].mozrank = link['umrp']
+        added_pages[source_url].moztrust = link['utrp']
         added_pages[source_url].page_authority = link['upa']
         added_pages[source_url].outbound_links ||= []
         added_pages[source_url].outbound_links << Link.new(:url => target_url)

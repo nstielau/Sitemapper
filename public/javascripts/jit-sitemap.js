@@ -128,7 +128,8 @@ function init(){
 
             //Make right column relations list.
             var html = "<strong>Path:</strong> " + node.name + "<br/>";
-            html += "<strong>Mozrank:</strong> " + node.data.mozrank + "<br/>";
+            html += "<strong>mozRank:</strong> " + node.data.mozrank + "<br/>";
+            html += "<strong>mozTrust:</strong> " + node.data.moztrust + "<br/>";            
             html += "<strong>Authority:</strong> " + node.data.page_authority + "<br/>";
             html += "<b>Links:</b>";
             html += "<ul>";
