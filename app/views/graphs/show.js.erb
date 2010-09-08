@@ -15,7 +15,7 @@ var json = [
     "name": "<%= page.path -%>",
     "data": { "$dim": <%= (page.mozrank).to_i-%>,
               "mozrank": "<%= sprintf("%.2f", page.mozrank.to_f) -%>",
-              "moztrust": "<%= page.moztrust.to_f <= 0 ? '\'unknown\'' : sprintf("%.2f", page.moztrust.to_f) -%>",
+              "moztrust": "<%= page.moztrust.to_f <= 0 ? 'unknown' : sprintf("%.2f", page.moztrust.to_f) -%>",
               "page_authority":  "<%= page.page_authority -%>"},
     "adjacencies": [
 <% page.outbound_links.each do |link| -%>
