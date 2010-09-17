@@ -16,8 +16,8 @@ class UsersController < ApplicationController
       # button. Uncomment if you understand the tradeoffs.
       # reset session
       self.current_user = @user # !! now logged in
-      redirect_back_or_default('/')
       flash[:notice] = "Thanks for signing up!"
+      redirect_back_or_default('/')
     else
       flash[:error]  = "We couldn't set up that account, sorry.  Please try again."
       render :action => 'new'
@@ -38,6 +38,7 @@ class UsersController < ApplicationController
     current_user.seomoz_access_id = params[:AccessID]
     current_user.has_delegated_seomoz_auth = true
     current_user.save
+    flash[:notice] = "Authorization complete."
     redirect_to "/"
   end
 end
