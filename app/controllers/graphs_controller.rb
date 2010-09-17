@@ -66,6 +66,11 @@ class GraphsController < ApplicationController
     # This is specifically to catch unauthorized errors from the SEOmoz API.
     status = begin
       @graph.save
+    rescue UnauthorizedError
+      current_user.has_delegated_seomoz_auth = false
+      current_user.save
+      @needs_to_delegate_auth = true
+      false
     rescue
       false
     end
