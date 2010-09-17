@@ -13,3 +13,6 @@ elsif Rails.env == "production"
   MongoMapper.database = APPLICATION_NAME
   MongoMapper.database.authenticate(ENV['MONGOHQ_USERNAME'], ENV['MONGOHQ_PASSWORD'])
 end
+
+#  mongodump -h flame.mongohq.com:27026 -d site_graph -u username -ppassword -o ./mongodump
+#  mongorestore -d site_graph_development ./mongodump/site_graph/
