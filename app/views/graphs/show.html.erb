@@ -10,7 +10,7 @@
 <div id="right-container">
   <div>
     <h4 style="margin:5px 0;position: relative;">
-      <img style="position: relative; top: 6px;" src="/images/small_linkscape.png"/>
+      <a window="_blank" href="http://www.seomoz.org/linkscape"><img style="border:none;position: relative; top: 6px;" src="/images/small_linkscape.png"/></a>
       Linkscape Metrics
     </h4>
     <strong>Title:</strong> <%= @graph.title %><br/>
@@ -22,9 +22,9 @@
     <strong>Detail:</strong> <%= link_to "View Detailed", detailed_graph_url(:id => @graph_id || @graph.id) %>
 <% end %><br/>
   <strong>Path:</strong> <span id="node_name"></span><br/>
-  <strong>mozRank:</strong> <span id="node_mozrank"></span><br/>
-  <strong>mozTrust:</strong> <span id="node_moztrust"></span><br/>
-  <strong>Page Authority:</strong> <span id="node_page_authority"></span><br/>
+  <strong>mozRank:</strong> <span class="mozmetric" id="node_mozrank"></span><br/>
+  <strong>mozTrust:</strong> <span class="mozmetric" id="node_moztrust"></span><br/>
+  <strong>Page Authority:</strong> <span class="mozmetric" id="node_page_authority"></span><br/>
   </div>
   <div id="inner-details" style="width: 300px;">
   </div>

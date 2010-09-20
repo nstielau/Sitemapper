@@ -60,3 +60,11 @@ div#legend {
 	padding: 10px;
 }
 div#legend h3 {padding: 0; margin: 0; padding-bottom: 5px;}
+
+.mozmetric a {
+text-decoration: none;
+}
+
+.mozmetric a:hover {
+text-decoration: underline;
+}
