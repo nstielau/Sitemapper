@@ -7,6 +7,7 @@ class GraphsController < ApplicationController
   def example
     @graph = OpenStruct.new(:title => "Example Graph of SEOmoz.org", :url => "http://www.seomoz.org", :page_count => 428)
     @graph_id = "example"
+    @detailed_report = (params[:detailed] == "true")
     render :action => :show
   end
 
