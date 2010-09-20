@@ -15,7 +15,7 @@
     </h4>
     <strong>Title:</strong> <%= @graph.title %><br/>
     <strong>URL:</strong> <%= @graph.url %><br/>
-    <strong>Pages:</strong> <%= @graph.page_count %><br/>
+    <strong>Pages:</strong> <span class="mozmetric"><a href="http://www.opensiteexplorer.org/<%= @graph.host_or_empty_string -%>/a"><%= @graph.page_count %></a></span><br/>
 <% if @detailed_report %>
     <strong>Detail:</strong> <%= link_to "View Simpilfied", graph_url(:id => @graph_id || @graph.id) %>
 <% else %>
