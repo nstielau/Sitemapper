@@ -51,6 +51,14 @@ class Graph
     end
   end
 
+  def host_or_empty_string
+    begin
+      URI.parse(url).host
+    rescue
+      "xxx"
+    end
+  end
+
   def page_count
     @page_count ||= pages.size
   end

@@ -5,7 +5,10 @@ class GraphsController < ApplicationController
   before_filter :check_auth_delegated, :except => [:example, :show]
 
   def example
-    @graph = OpenStruct.new(:title => "Example Graph of SEOmoz.org", :url => "http://www.seomoz.org", :page_count => 428)
+    @graph = OpenStruct.new(:title => "Example Graph of SEOmoz.org",
+                            :url => "http://www.seomoz.org",
+                            :page_count => 428,
+                            :host_or_empty_string => "www.seomoz.org")
     @graph_id = "example"
     @detailed_report = (params[:detailed] == "true")
     render :action => :show

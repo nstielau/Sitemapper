@@ -20,7 +20,11 @@
     <strong>Detail:</strong> <%= link_to "View Simpilfied", graph_url(:id => @graph_id || @graph.id) %>
 <% else %>
     <strong>Detail:</strong> <%= link_to "View Detailed", detailed_graph_url(:id => @graph_id || @graph.id) %>
-<% end %>
+<% end %><br/>
+  <strong>Path:</strong> <span id="node_name"></span><br/>
+  <strong>mozRank:</strong> <span id="node_mozrank"></span><br/>
+  <strong>mozTrust:</strong> <span id="node_moztrust"></span><br/>
+  <strong>Page Authority:</strong> <span id="node_page_authority"></span><br/>
   </div>
   <div id="inner-details" style="width: 300px;">
   </div>
@@ -29,7 +33,9 @@
 <br style="clear:both"/>
 
 <script type="text/javascript">
+var host;
 $(function() {
+  host = "<%= @graph.host_or_empty_string -%>";
 	$("#right-container").dialog({width:325, "position": [10,75]});
 	try {
     init();

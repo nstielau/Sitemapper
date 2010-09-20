@@ -127,11 +127,13 @@ function init(){
             Log.write("Centering " + node.name + "...");
 
             //Make right column relations list.
-            var html = "<strong>Path:</strong> " + node.name + "<br/>";
-            html += "<strong>mozRank:</strong> " + node.data.mozrank + "<br/>";
-            html += "<strong>mozTrust:</strong> " + node.data.moztrust + "<br/>";
-            html += "<strong>Page Authority:</strong> " + node.data.page_authority + "<br/>";
-            html += "<b>Links:</b>";
+            var attr_url = "<a window=\"_blank\" href=\"http://www.opensiteexplorer.org/" + host + escape(encodeURIComponent(node.name)) + "/a\">VALUE</a>";
+            document.getElementById('node_name').innerHTML = node.name;
+            document.getElementById('node_mozrank').innerHTML = attr_url.replace("VALUE", node.data.mozrank);
+            document.getElementById('node_moztrust').innerHTML = attr_url.replace("VALUE", node.data.moztrust);
+            document.getElementById('node_page_authority').innerHTML = attr_url.replace("VALUE", node.data.page_authority);
+
+            var html = "<b>Links:</b>";
             html += "<ul>";
             Graph.Util.eachAdjacency(node, function(adj){
                 var child = adj.nodeTo;
