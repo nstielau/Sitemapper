@@ -1,3 +1,4 @@
 log/*
 db/*.sqlite*
 .bundle
+db/dump*
